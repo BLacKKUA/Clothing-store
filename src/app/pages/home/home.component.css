@@ -1,3 +1,4 @@
 .home-container {
-    padding-top: 80px;
+    position: absolute;
+    z-index: 50;
 }

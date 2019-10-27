@@ -1,5 +1,6 @@
 .header-container {
   position: fixed;
+  z-index: 99999;
   width: 100%;
   background-color: rgba(10, 10, 10, 0.7);
 }
@@ -62,7 +63,7 @@ a {
   transition-delay: 0s;
 }
 
-.btn {
+.btnOther {
   font-size: 12px;
   font-weight: 700;
 }
