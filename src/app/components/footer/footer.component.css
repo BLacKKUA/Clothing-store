@@ -1,0 +1,77 @@
+.footer-text {
+  text-align: center;
+  font-family: 'Open Sans', sans-serif;
+  color: #666666;
+}
+
+.footer-container {
+  background: #202020;
+  height: 100px;
+}
+
+.hoverEffect {
+  margin: 0 50px;
+  color: #ffffff;
+  transition-property: color;
+  transition-duration: 0.3s;
+  transition-delay: 0.3s;
+}
+
+.hoverEffect:hover {
+  color: #bf913a;
+  transition-delay: 0s;
+}
+
+.footer-navigator {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -ms-flex-pack: distribute;
+  padding: 25px 0;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.navigator {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+}
+
+.social-navigator {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+  padding: 25px 0;
+}
+
+.fa-youtube:hover {
+  color: #ff0000;
+}
+
+.fab {
+  margin: 0 5px;
+}
+
+.fa-facebook-f:hover {
+  color: royalblue;
+}
+
+.active {
+  color: #bf913a;
+}
+
+.btn {
+  font-size: 12px;
+  font-weight: 700;
+}

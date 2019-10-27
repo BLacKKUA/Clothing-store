@@ -1,0 +1,72 @@
+.header-container {
+  position: fixed;
+  width: 100%;
+  background-color: rgba(10, 10, 10, 0.7);
+}
+
+.header-section {
+  margin: 0px 50px;
+}
+
+.logo {
+  max-width: 140px;
+  margin: 20px 0 20px 80px;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.navigator {
+  width: 40%;
+}
+
+.header-navigator {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -ms-flex-pack: distribute;
+  justify-content: space-around;
+}
+
+.header-wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -ms-flex-pack: distribute;
+  justify-content: space-around;
+}
+
+.hoverEffect {
+  color: #ffffff;
+  transition-property: color;
+  transition-duration: 0.3s;
+  transition-delay: 0.3s;
+}
+
+.hoverEffect:hover {
+  color: #bf913a;
+  transition-delay: 0s;
+}
+
+.btn {
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.active {
+  color: #bf913a;
+}
