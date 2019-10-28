@@ -1,3 +1,67 @@
-.about-container {
-    padding-top: 80px;
+.containerAbout {
+  height: 100vh;
+  width: 100vw;
+}
+
+.first {
+  background-image: url(https://meddes.co/wp-content/uploads/2017/01/Wallpaper-1.jpg);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.second {
+  background-image: url(https://meddes.co/wp-content/uploads/2017/01/Wallpaper4.jpg);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.second>.textForFirst {
+  margin: 0 0 0 60%;
+}
+
+.third {
+  background-image: url(https://meddes.co/wp-content/uploads/2017/01/Wallpaper5.jpg);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: center;
+}
+
+.third>.textForFirst {
+  margin: 0 0 0 20%;
+}
+
+.textForFirst {
+  width: 300px;
+  height: 200px;
+  background-color: black;
+  opacity: .8;
+  text-align: center;
+  line-height: 1.5;
+}
+
+.textStyle {
+  text-align: center;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 22px;
+  color: #FFF;
 }
