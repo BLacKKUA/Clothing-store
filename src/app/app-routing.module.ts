@@ -24,6 +24,7 @@ const routes: Routes = [
       { path: 'blogs', component: AdminBlogsComponent },
     ]
   },
+  { path: '**', redirectTo: '/home' }
 ];
 
 @NgModule({
