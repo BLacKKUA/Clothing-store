@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AngularFireStorageReference, AngularFireUploadTask, AngularFireStorage } from '@angular/fire/storage';
 import { Observable } from 'rxjs';
 import { finalize, map } from 'rxjs/operators';
-import { AngularFirestore } from '@angular/fire/firestore';
+import { ProductsService } from 'src/app/shared/services/products.service';
 
 @Component({
   selector: 'app-admin-product',
@@ -10,7 +10,8 @@ import { AngularFirestore } from '@angular/fire/firestore';
   styleUrls: ['./admin-product.component.css']
 })
 export class AdminProductComponent implements OnInit {
-
+  arrAdminProducts = [];
+  prodName: string;
   productImage: string;
   ref: AngularFireStorageReference;
   task: AngularFireUploadTask;
@@ -20,11 +21,30 @@ export class AdminProductComponent implements OnInit {
   urlImage: string;
 
   constructor(
-    // private productsService: ProductsService,
+    private productsService: ProductsService,
     private prStorage: AngularFireStorage
-      ) { }
+  ) {
+    // tslint:disable-next-line: no-unused-expression
+    this.getAdminProducts();
+    console.log(this.arrAdminProducts);
+  }
 
   ngOnInit() {
+  }
+
+  private getAdminProducts(): void {
+    this.arrAdminProducts = this.productsService.getProducts();
+  }
+  public addProd(): void {
+    const newProd = {
+      id: 3,
+      category: 't-shirt',
+      name: this.prodName
+      // description: this.description,
+      // price: this.price
+    }
+    this.productsService.addProducts(newProd);
+    this.prodName = '';
   }
   public upload(event): void {
     const id = Math.random().toString(36).substring(2);

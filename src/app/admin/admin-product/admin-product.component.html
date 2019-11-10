@@ -1,26 +1,54 @@
+<form action="">
+  <div class="form-group">
+    <!-- <input type="text"  [(ngModel)]="prodName" name="prodName" class="form-control"> -->
+    <button type="button" class="btn btn-success" (click)="addProd()">Add</button>
+  </div>
+</form>
+
 <div class="form-group row">
-    <div class="card-body">
-      <h5 class="card-title">Select a file for upload:</h5>
-      <!-- <input type="file" (change)="upload($event)" accept=".png,.jpg" /> -->
-      <input type="file" (change)="upload($event)" accept=".png,.jpg" />
-      <br><br>
-      <div class="progress">
-        <div class="progress-bar progress-bar-striped bg-success" role="progressbar"
-          [style.width]="(uploadProgress | async) + '%'" [attr.aria-valuenow]="(uploadProgress | async)"
-          aria-valuemin="0" aria-valuemax="100"></div>
-      </div>
-      <br>
-      <div *ngIf="downloadURL | async; let downloadSrc" class="alert alert-info" role="alert">
-        File uploaded: <a [href]="downloadSrc">{{downloadSrc}}</a>
-      </div>
-      <br>
-      <div class="btn-group" role="group" *ngIf="uploadState | async; let state">
-        <button type="button" class="btn btn-primary" (click)="task.pause()"
-          [disabled]="state === 'paused'">Pause</button>
-        <button type="button" class="btn btn-primary" (click)="task.cancel()"
-          [disabled]="!(state === 'paused' || state === 'running')">Cancel</button>
-        <button type="button" class="btn btn-primary" (click)="task.resume()"
-          [disabled]="state === 'running'">Resume</button>
-      </div>
+  <div class="card-body">
+    <h5 class="card-title">Select a file for upload:</h5>
+    <!-- <input type="file" (change)="upload($event)" accept=".png,.jpg" /> -->
+    <input type="file" (change)="upload($event)" accept=".png,.jpg" />
+    <br><br>
+    <div class="progress">
+      <div class="progress-bar progress-bar-striped bg-success" role="progressbar"
+        [style.width]="(uploadProgress | async) + '%'" [attr.aria-valuenow]="(uploadProgress | async)" aria-valuemin="0"
+        aria-valuemax="100"></div>
+    </div>
+    <br>
+    <div *ngIf="downloadURL | async; let downloadSrc" class="alert alert-info" role="alert">
+      File uploaded: <a [href]="downloadSrc">{{downloadSrc}}</a>
+    </div>
+    <br>
+    <div class="btn-group" role="group" *ngIf="uploadState | async; let state">
+      <button type="button" class="btn btn-primary" (click)="task.pause()"
+        [disabled]="state === 'paused'">Pause</button>
+      <button type="button" class="btn btn-primary" (click)="task.cancel()"
+        [disabled]="!(state === 'paused' || state === 'running')">Cancel</button>
+      <button type="button" class="btn btn-primary" (click)="task.resume()"
+        [disabled]="state === 'running'">Resume</button>
     </div>
   </div>
+</div>
+
+<table class="table">
+  <thead class="thead-light">
+    <tr>
+      <th scope="col" class="font-weight-bold">#</th>
+      <th scope="col" class="font-weight-bold">Name</th>
+      <th scope="col" class="font-weight-bold">Category</th>
+      <th scope="col" class="font-weight-bold">Description</th>
+      <th scope="col" class="font-weight-bold">Price</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let prod of arrAdminProducts; let i=index">
+      <th scope="row">{{i+1}}</th>
+      <td>{{prod.name}}</td>
+      <td>{{prod.category}}</td>
+      <td>{{prod.description}}</td>
+      <td>{{prod.price}}</td>
+    </tr>
+  </tbody>
+</table>
