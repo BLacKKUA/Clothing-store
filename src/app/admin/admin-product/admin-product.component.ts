@@ -10,6 +10,7 @@ import { ProductsService } from 'src/app/shared/services/products.service';
   styleUrls: ['./admin-product.component.css']
 })
 export class AdminProductComponent implements OnInit {
+  // products: Array<IProducts>;
   arrAdminProducts = [];
   prodName: string;
   productImage: string;
@@ -19,18 +20,33 @@ export class AdminProductComponent implements OnInit {
   uploadProgress: Observable<number>;
   downloadURL: Observable<string>;
   urlImage: string;
+  description: any;
+  price: any;
+  firestore: any;
+  product: any;
 
   constructor(
     private productsService: ProductsService,
     private prStorage: AngularFireStorage
   ) {
-    // tslint:disable-next-line: no-unused-expression
     this.getAdminProducts();
-    console.log(this.arrAdminProducts);
   }
 
   ngOnInit() {
   }
+
+  // public getProducts(): void {
+  //   this.firestore.collection('products').snapshotChanges().subscribe(
+  //     arrayProducts => {
+  //       this.product = arrayProducts.map(product => {
+  //         return {
+  //           id: product.payload.doc.id,
+  //           ...product.payload.doc.data()
+  //         } as IProducts;
+  //       });
+  //     }
+  //   );
+  // }
 
   private getAdminProducts(): void {
     this.arrAdminProducts = this.productsService.getProducts();
@@ -39,12 +55,14 @@ export class AdminProductComponent implements OnInit {
     const newProd = {
       id: 3,
       category: 't-shirt',
-      name: this.prodName
-      // description: this.description,
-      // price: this.price
-    }
+      name: this.prodName,
+      description: this.description,
+      price: this.price
+    };
     this.productsService.addProducts(newProd);
     this.prodName = '';
+    this.description = '';
+    this.price = '';
   }
   public upload(event): void {
     const id = Math.random().toString(36).substring(2);

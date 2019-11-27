@@ -1,6 +1,12 @@
 <form action="">
   <div class="form-group">
-    <!-- <input type="text"  [(ngModel)]="prodName" name="prodName" class="form-control"> -->
+    <p>Name:</p>
+    <input type="text"  [(ngModel)]="prodName" name="prodName" class="form-control">
+    <p>Description:</p>
+    <input type="text"  [(ngModel)]="description" name="description" class="form-control">
+    <p>Price:</p>
+    <input type="number"  [(ngModel)]="price" name="price" class="form-control">
+
     <button type="button" class="btn btn-success" (click)="addProd()">Add</button>
   </div>
 </form>
